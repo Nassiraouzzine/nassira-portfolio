@@ -1,0 +1,73 @@
+<section class="about">
+  <h1>Qui <span class="name">suis-je ?</span></h1>
+
+  <div class="grid">
+    <div class="text">
+      <p>
+        Bonjour ! Je suis <span class="kw">Nassira Ouzzine</span>, élève ingénieure en
+        <span class="kw">Data Science et IA</span> à <span class="kw">IMT Nord Europe</span> (Lille),
+        en double diplôme avec l’<span class="kw">AIAC</span>, l’académie de l’aviation civile à Casablanca.
+      </p>
+      <p>
+        L’aviation est le fil de mon parcours : mon premier stage à l’ONDA, le club Aerolic,
+        et mon projet de prédiction des retards de vols. Mes domaines de prédilection :
+        <span class="kw">l’analyse de données</span>, le <span class="kw">machine learning</span>
+        et <span class="kw">l’automatisation par LLM</span>, avec des outils qui tournent vraiment,
+        pas seulement dans un notebook.
+      </p>
+
+      <p class="lead-in">Mes expériences :</p>
+      <ul class="list">
+        <li><span class="kw">Stage chez Value IT</span> (2026) : veille concurrentielle automatisée avec n8n et des LLM, en production ; agent IA de gestion d’e-mails.</li>
+        <li><span class="kw">Stage à l’ONDA</span> (2025) : serveur GLPI avec inventaire automatique, dans une infrastructure virtualisée.</li>
+        <li><span class="kw">Projets académiques</span> : prédiction des retards de vols, segmentation RFM et CLV d’un site e-commerce.</li>
+      </ul>
+
+      <p>
+        Je recherche un <span class="kw">stage d’assistant ingénieur</span> de 4 à 5 mois à partir
+        d’<span class="kw">avril 2027</span>, en data analysis, data science et IA.
+      </p>
+
+      <p class="lead-in">En dehors du code, j’aime :</p>
+      <ul class="list">
+        <li>Le volley-ball et le ping-pong</li>
+        <li>La cuisine</li>
+        <li>Découvrir la culture française</li>
+      </ul>
+    </div>
+
+    <aside class="card" aria-label="En bref">
+      <h2 class="card-title">En bref</h2>
+      <dl>
+        <div><dt>Formation</dt><dd>IMT Nord Europe (programme RAISE) et AIAC, diplôme d’ingénieur</dd></div>
+        <div><dt>Je cherche</dt><dd>Stage d’assistant ingénieur, 4 à 5 mois, dès avril 2027</dd></div>
+        <div><dt>Certifications</dt><dd>CCNA, Sécurité réseau Cisco, Data Engineer (DataCamp)</dd></div>
+        <div><dt>Langues</dt><dd>Français, anglais, arabe, espagnol (débutant)</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <h2 class="title">Compétences <span class="name">techniques</span></h2>
+  <ul class="pills">
+    @for (s of skills; track s.name) {
+      <li class="pill" [class.invert]="s.invert">
+        @if (s.icon) {
+          <img [src]="iconUrl(s.icon)" alt="" width="22" height="22" loading="lazy" (error)="hide($event)">
+        }
+        {{ s.name }}
+      </li>
+    }
+  </ul>
+
+  <h2 class="title"><span class="name">Outils</span> que j’utilise</h2>
+  <ul class="pills">
+    @for (t of tools; track t.name) {
+      <li class="pill" [class.invert]="t.invert">
+        @if (t.icon) {
+          <img [src]="iconUrl(t.icon)" alt="" width="22" height="22" loading="lazy" (error)="hide($event)">
+        }
+        {{ t.name }}
+      </li>
+    }
+  </ul>
+</section>

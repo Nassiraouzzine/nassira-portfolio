@@ -1,0 +1,27 @@
+<section class="home">
+  <div class="text">
+    <p class="hello">Bonjour !</p>
+    <h1>Je suis <span class="name">Nassira Ouzzine</span></h1>
+    <p class="typed"><span>{{ typed }}</span><span class="caret" aria-hidden="true"></span></p>
+    <p class="lede">
+      Élève ingénieure à IMT Nord Europe, en double diplôme avec l’AIAC.
+      Je cherche un stage d’assistant ingénieur de 4 à 5 mois à partir d’avril 2027.
+    </p>
+    <div class="actions">
+      <a class="btn primary" routerLink="/projects">Voir mes projets</a>
+      <a class="btn" href="cv-nassira-ouzzine.pdf" download>Télécharger mon CV</a>
+    </div>
+  </div>
+
+  <div class="visual">
+    <canvas #field class="field" aria-hidden="true" (click)="toggle()"></canvas>
+    <div class="foot">
+      <button type="button" class="toggle" (click)="toggle()">
+        {{ grouped ? 'Disperser les points' : 'Ranger les points en groupes' }}
+      </button>
+      <p class="hint" aria-live="polite">
+        {{ grouped ? 'Chaque groupe est un type de projet que j’ai réalisé.' : 'Un clic sur le schéma fait la même chose.' }}
+      </p>
+    </div>
+  </div>
+</section>

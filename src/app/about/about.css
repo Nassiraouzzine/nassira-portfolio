@@ -1,0 +1,153 @@
+:host {
+  display: block;
+}
+
+.about {
+  max-width: 76rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2.5rem) 4rem;
+}
+
+h1,
+.title {
+  margin: 0 0 2rem;
+  text-align: center;
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+}
+
+.title {
+  margin-top: 4rem;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+}
+
+.name {
+  color: var(--sky);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.text p {
+  margin: 0 0 1.1rem;
+  max-width: 40rem;
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.lead-in {
+  margin-top: 1.6rem;
+  font-family: var(--display);
+  font-weight: 700;
+}
+
+.list {
+  margin: 0 0 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  position: relative;
+  max-width: 40rem;
+  margin-bottom: 0.6rem;
+  padding-left: 1.6rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--sky);
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(16, 28, 56, 0.6);
+}
+
+.card-title {
+  margin: 0 0 1rem;
+  font-family: var(--display);
+  font-size: 1.3rem;
+}
+
+.card dl {
+  margin: 0;
+}
+
+.card dl div {
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.card dt {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--sky);
+}
+
+.card dd {
+  margin: 0.15rem 0 0;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(31, 111, 235, 0.12);
+  font-family: var(--display);
+  font-weight: 500;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--sky);
+}
+
+.pill.invert img {
+  filter: invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill {
+    transition: none;
+  }
+
+  .pill:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

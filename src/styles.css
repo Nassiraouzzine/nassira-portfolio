@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #0a1226;
+  --bg-soft: #101c38;
+  --line: rgba(125, 180, 255, 0.25);
+  --blue: #1f6feb;
+  --sky: #7db4ff;
+  --text: #eef3ff;
+  --muted: #a8b6d6;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ciel étoilé, sans JavaScript */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+  background-image:
+    radial-gradient(circle at 40px 60px, #fff 0, #fff 1px, transparent 1.6px),
+    radial-gradient(circle at 150px 170px, #cfe3ff 0, #cfe3ff 0.8px, transparent 1.4px),
+    radial-gradient(circle at 210px 90px, #9fc5ff 0, #9fc5ff 1.2px, transparent 1.9px);
+  background-size: 260px 260px, 340px 340px, 430px 430px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 3px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.3rem;
+  border: 2px solid var(--sky);
+  border-radius: 10px;
+  background: transparent;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn.primary {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.kw {
+  font-weight: 600;
+  color: var(--sky);
+}

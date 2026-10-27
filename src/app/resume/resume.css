@@ -1,0 +1,52 @@
+:host {
+  display: block;
+}
+
+.resume {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2.5rem) 4rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  letter-spacing: -0.02em;
+}
+
+.name {
+  color: var(--sky);
+}
+
+.sub {
+  max-width: 40rem;
+  margin: 0 auto 1.75rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.actions {
+  margin-bottom: 2rem;
+}
+
+.viewer {
+  display: block;
+  width: 100%;
+  height: 88svh;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.fallback {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.fallback a {
+  color: var(--sky);
+  font-weight: 700;
+}

@@ -1,0 +1,98 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 4.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: clamp(1.25rem, 3vw, 2.5rem);
+  background: rgba(10, 18, 38, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand span {
+  color: var(--sky);
+}
+
+.nav nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 2.5vw, 1.75rem);
+}
+
+.nav nav a {
+  font-family: var(--display);
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav nav a:hover,
+.nav nav a.active {
+  color: var(--sky);
+}
+
+.nav nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+
+.nav .gh {
+  display: inline-flex;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(31, 111, 235, 0.25);
+}
+
+.page {
+  flex: 1;
+}
+
+.site-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 1.25rem clamp(1.25rem, 3vw, 2.5rem);
+  background: #070d1c;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.site-foot p {
+  margin: 0;
+}
+
+.soc {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.soc a {
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .nav nav a:first-child {
+    display: none;
+  }
+}

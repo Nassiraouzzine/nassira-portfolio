@@ -1,0 +1,62 @@
+<section class="projects">
+  <h1>Mes <span class="name">Projets</span></h1>
+  <p class="sub">
+    Une sélection de projets réalisés en stage et à l’école. Clique sur une image pour voir toutes les captures.
+  </p>
+
+  <div class="cards">
+    @for (p of projects; track p.id) {
+      <article class="card">
+        @if (p.images.length) {
+          <button type="button" class="shot" (click)="open(p)" [attr.aria-label]="'Voir les captures du projet ' + p.title">
+            <img [src]="p.images[0]" [alt]="'Capture du projet ' + p.title" loading="lazy">
+            <span class="count">{{ p.images.length }} {{ p.images.length > 1 ? 'captures' : 'capture' }}</span>
+          </button>
+        } @else {
+          <div class="shot empty">Captures à venir</div>
+        }
+
+        <div class="body">
+          <p class="kind">{{ p.kind }}</p>
+          <h2>{{ p.title }}</h2>
+          <p>{{ p.text }}</p>
+          @if (p.result) {
+            <p class="result">{{ p.result }}</p>
+          }
+
+          <ul class="tags">
+            @for (t of p.tags; track t) {
+              <li>{{ t }}</li>
+            }
+          </ul>
+
+                    <div class="links">
+            <a class="btn primary" [href]="p.github" target="_blank" rel="noopener">Voir le code sur GitHub</a>
+            @for (d of p.docs; track d.file) {
+              <a class="btn" [href]="d.file" target="_blank" rel="noopener">{{ d.label }}</a>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<dialog #viewerDialog class="viewer" (close)="viewer = null" (click)="onBackdrop($event)" (keydown)="onKey($event)">
+  @if (viewer) {
+    <div class="viewer-body">
+      <img [src]="viewer.p.images[viewer.i]"
+           [alt]="'Capture ' + (viewer.i + 1) + ' sur ' + viewer.p.images.length + ' du projet ' + viewer.p.title">
+      <div class="viewer-bar">
+        <p>{{ viewer.i + 1 }} sur {{ viewer.p.images.length }}</p>
+        <div class="viewer-actions">
+          @if (viewer.p.images.length > 1) {
+            <button type="button" class="vbtn" (click)="step(-1)">Précédente</button>
+            <button type="button" class="vbtn" (click)="step(1)">Suivante</button>
+          }
+          <button type="button" class="vbtn" (click)="close()">Fermer</button>
+        </div>
+      </div>
+    </div>
+  }
+</dialog>
